@@ -1,12 +1,13 @@
 <?php
-$host = 'localhost';
-$user = 'root';
-$pass = '';
-$dbname = 'auth_demo';
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-$conn = new mysqli($host, $user, $pass, $dbname);
+$conn = mysqli_connect("localhost", "root", "", "login_register");
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if (!$conn) {
+    die("❌ Connection failed: " . mysqli_connect_error());
+} else {
+    // Comment this line after testing if it works
+    // echo "✅ Database connected!";
 }
 ?>
